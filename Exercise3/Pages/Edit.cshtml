@@ -5,6 +5,7 @@
         <h1>Student Registration</h1>
         <form method="post">
             <div asp-validation-summary="All"></div>
+            <input type="hidden" asp-for="Student.StudentId" />
             <div class="form-group">
                 <label>Name</label>
                 <input class="form-control" asp-for="Student.Name" />
