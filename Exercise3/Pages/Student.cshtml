@@ -35,12 +35,13 @@
     <tbody>
         @foreach (var student in Model.Students)
         {
-            <tr>
-                <td>@student.StudentId</td>
-                <td>@student.Name</td>
-                <td>@student.Age</td>
-                <td>@student.Address</td>
-            </tr>
+        <tr>
+            <td>@student.StudentId</td>
+            <td>@student.Name</td>
+            <td>@student.Age</td>
+            <td>@student.Address</td>
+            <td><a asp-page="Edit" asp-route-id="@student.StudentId">Edit</a> | <a asp-page="Student" asp-page-handler="Delete" asp-route-id="@student.StudentId">Delete</a></td>
+        </tr>
         }
     </tbody>
 </table>

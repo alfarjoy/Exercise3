@@ -38,5 +38,16 @@ namespace Exercise3.Pages
             _enrollmentdbcontext.SaveChanges();
             return Redirect("/student");
         }
+        public void OnGetDelete(int id)
+        {
+            var stud = _enrollmentdbcontext.Students
+                .FirstOrDefault(s => s.StudentId == id);
+            if (stud != null)
+            {
+                _enrollmentdbcontext.Students.Remove(stud);
+                _enrollmentdbcontext.SaveChanges();
+            }
+            OnGet();
+        }
     }
 }
